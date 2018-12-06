@@ -9,8 +9,8 @@ var defaultConfig = {
     port: 3306
   },
   zabbix: {
-    url: 'http://localhost/zabbix/api_jsonrpc.php',
-    username: 'admin',
+    url: 'http://zabbix-web/api_jsonrpc.php',
+    username: 'Admin',
     password: 'zabbix'
   }
 };

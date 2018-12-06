@@ -1,16 +1,14 @@
 var mysqlConfig = require('./config.js').mysql;
-var mysql = require('mysql');
+var pg = require('pg')
 var exec = require('./lib/exec');
 
+
 function initApp() {
-  var connection = mysql.createConnection(mysqlConfig);
-  connection.connect(function(err) {
-    if (err) {
-      console.error('error mysql connecting: ' + err.stack);
-      process.exit(1);
-    }
-    exec(connection);
-  });
+  const client = new pg.Client();
+  client.connect()
+  exec(client)
 }
 
 initApp();
+
+//node server.js command -d elastic -g 'Zabbix servers' -l 5m -t 'history' -u 'http://elasticsearch:9200/teste'
