@@ -11,4 +11,4 @@ function initApp() {
 
 initApp();
 
-//node server.js command -d elastic -g 'Zabbix servers' -l 5m -t 'history' -u 'http://elasticsearch:9200/teste'
+//d run node node server.js command -d elastic -g 'Zabbix servers' -l 5m -t 'history' -u 'http://elasticsearch:9200/teste'

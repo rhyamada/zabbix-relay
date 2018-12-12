@@ -131,3 +131,20 @@ node server.js command -d elastic -g 'Test Group' -l 30m -t 'trends' -u 'test:te
 Send a pull request to [http://github.com/jojohappy/zabbix-relay](http://github.com/jojohappy/zabbix-relay). 
 
 Use [http://github.com/jojohappy/zabbix-relay/issues](http://github.com/jojohappy/zabbix-relay/issues) for discussion.
+
+## On elasticsearch put template for data
+PUT _template/zbx_tpl
+{
+  "index_patterns": ["zabbix.history*"],
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "zabbix.history": {
+      "properties": {
+        "value0": {"type": "double"},
+        "value3": {"type": "integer"}
+      }
+    }
+  }
+}
